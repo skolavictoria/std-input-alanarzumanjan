@@ -34,21 +34,16 @@ int calculator(int argc, char *argv[], char operator) {
 
     switch (operator) {
         case '+':
-            result = number1 + number2;
+            result = number1+number2;
             break;
         case '-':
-            result = number1 - number2;
+            result = number1-number2;
             break;
         case '*':
-            result = number1 * number2;
+            result = number1*number2;
             break;
         case '/':
-            if (number2 != 0) {
-                result = (float)number1 / number2;
-            } else {
-                printf("Division by zero is not allowed.\n");
-                return 1;
-            }
+            result = (float)number1/number2;
             break;
         default:
             printf("Invalid operator: %c\n", operator);
@@ -56,7 +51,6 @@ int calculator(int argc, char *argv[], char operator) {
     }
 
     printf("Result: %.2f\n", result);
-    return 0;
 }
 
 int main(int argc, char *argv[]) {
@@ -64,10 +58,12 @@ int main(int argc, char *argv[]) {
         printf("Usage: %s <number1> <operator> <number2>\n", argv[0]);
         return 1;
     }
-
+    
     char operator = argv[2][0];
-    return calculator(argc, argv, operator);
+
+    calculator(argc, argv, operator);
+
+    return 0;
 }
 
-
-// gcc main.c -o main.o -lm
+// gcc calculator.c -o calculator.o -lm
