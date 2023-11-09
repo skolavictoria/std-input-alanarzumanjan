@@ -34,16 +34,16 @@ int calculator(int argc, char *argv[], char operator) {
 
     switch (operator) {
         case '+':
-            result = number1+number2;
+            result = number1 + number2;
             break;
         case '-':
-            result = number1-number2;
+            result = number1 - number2;
             break;
         case '*':
-            result = number1*number2;
+            result = number1 * number2;
             break;
         case '/':
-            result = (float)number1/number2;
+            result = (float)number1 / number2;
             break;
         default:
             printf("Invalid operator: %c\n", operator);
